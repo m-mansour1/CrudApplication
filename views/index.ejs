@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/myscripts.js"></script>
+    <title>Enrolled Students</title>
+</head>
+<body>   
+    <!-- Table code was taken from -->
+    <!-- https://dev.to/dcodeyt/creating-beautiful-html-tables-with-css-428l -->
+    <h1>Enrolled Students</h1>
+        <!-- alert code was taken from W3Schools -->
+        <% if (typeof message != "undefined") { %>
+            <div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                <%= message %> 
+              </div>
+        <% } %>       
+        <% if (results.length != 0) {  %>
+            <table class="styled-table" id="mytable">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Exam 1</th>
+                        <th>Exam 2</th>
+                        <th>Exam 3</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% results.forEach(student => { %>
+                        <tr class="active-row" id="<%= student._id %>">
+                            <td><%= student.firstName %> </td>
+                            <td><%= student.lastName  %> </td>
+                            <td><%= student.exam1Grade %> </td>
+                            <td><%= student.exam2Grade %> </td>
+                            <td><%= student.exam3Grade %> </td>
+                            <td><button onclick="RemoveStudentByIdViaFetch('<%= student._id %>')">Delete</button></td>
+                            <td><button onclick="window.location.href='/updateAStudent?id=<%= student._id %>'">Update</button></td>            
+                        </tr>                      
+                    <% }) %>            
+                </tbody>
+            </table>
+        <% } %>        
+    <a href="/insertAStudent">Insert a new student info and grades</a><br>
+    <a href="/filterExam3Grades">Show students while filtering exam 3 grades</a>
+    <a href="/CustomizedfilterExam3Grades">Show students while choosing a criteria and filtering exam 3 grades based on it</a>
+
+</body>
+</html>

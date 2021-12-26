@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Filter results form</title>
+</head>
+<body>
+<button onclick="window.location.href='/'">Return back to unfiltered students table</button>
+<h2>Specify your Exam 3 grade filter</h2>
+<div class="container">
+
+  <form action="/Customfilter" method="post">  
+  <div class="row">
+    <div class="col-25">
+      <label for="GreaterThanOrEqual">Show students with Exam 3 Grades</label>
+  </div>
+  <div class="col-50">
+    <select class="choice" name="choice" id="choice">
+      <option value="GreaterThanOrEqual">&gt;=</option>
+      <option value="LessThanOrEqual">&lt;=</option>
+      <option value="GreaterThan">&gt;</option>
+      <option value="LessThan">&lt;</option>
+      <option value="Equal">&Equal;</option>
+    </select>
+  </div>
+    <div class="col-75">
+      <input type="number" id="ex3gradeFilter" name="thevalue" min="0" max="100">
+    </div>
+  </div> 
+  <br>
+  <div class="row">
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+  </div>
+  </form>
+</body>
+</html>

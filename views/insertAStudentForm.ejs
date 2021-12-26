@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Insert a student - form</title>
+</head>
+<body>
+<button onclick="window.location.href='/'">Return back to students table</button>
+<h2>Insert personal info and grades of a new student</h2>
+<div class="container">
+  <form action="/insertAStudent" method="post">
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">First Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="firstName" placeholder="Student's first name.." required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Last Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lname" name="lastName" placeholder="Student's last name.." required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="ex1grade">Exam 1 Grade</label>
+    </div>
+    <div class="col-75">
+      <input type="number" id="ex1grade" name="exam1Grade" min="0" max="100">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="ex2grade">Exam 2 Grade</label>
+    </div>
+    <div class="col-75">
+      <input type="number" id="ex2grade" name="exam2Grade" min="0" max="100">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="ex3grade">Exam 3 Grade</label>
+    </div>
+    <div class="col-75">
+      <input type="number" id="ex3grade" name="exam3Grade" min="0" max="100">
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+  </div>
+  </form>
+</div>
+    
+</body>
+</html>
